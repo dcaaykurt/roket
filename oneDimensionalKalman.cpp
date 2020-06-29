@@ -1,5 +1,7 @@
 #include "oneDimensionalKalman.h"
 
+// kalman iyimis
+
 const float R = 0.1, Q = 0.1;
 float KK = 0, xKOld = 0, xKNew = 0, pKOld = 1, pKNew = 0;
 

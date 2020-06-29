@@ -7,7 +7,7 @@ double baseline,a,P;
 //GPS
 #include <TinyGPS++.h>
 TinyGPSPlus gps;
-
+// denemeler
 
 //UART
 #define FLOAT_PRECISION 6
