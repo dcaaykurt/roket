@@ -55,7 +55,9 @@ void setup() {
 void loop() {
   P = getPressure();
   a = pressure.altitude(P,baseline);
-  make_package("yuk",a, 25, gps.location.lat(), gps.location.lng());
+  //make_package("yuk",a, 25, gps.location.lat(), gps.location.lng());
+  double ok = gps.location.lat();
+  Serial.println(ok);
   post_package();
   delay(500);
 }
