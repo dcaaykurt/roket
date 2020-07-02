@@ -45,19 +45,20 @@ void setup() {
   //yeniSeriPort.begin(9600); megaan uno ya geçersen gps buna bagla
   Serial3.begin(9600);
   baseline = getPressure();
-  while(Serial3.available()){
-    gps.encode(Serial3.read());
-  }
+  
   uart_init(115200);
   set_package();
 }
 
 void loop() {
+  while(Serial3.available()){
+    gps.encode(Serial3.read());
+  }
   P = getPressure();
   a = pressure.altitude(P,baseline);
   //make_package("yuk",a, 25, gps.location.lat(), gps.location.lng());
   double ok = gps.location.lat();
   Serial.println(gps.location.lat(),6);
-  //post_package();
+  // post_package();
   delay(500);
 }

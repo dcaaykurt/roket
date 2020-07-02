@@ -18,15 +18,6 @@ unsigned long yenizaman;
 boolean ivme = false; 
 double bulundugunkonumsifirkabul,P,denizseviyesiyukseklik;
 
-
-
-
-
-
-
-
-
-
 void ivmefonk(){
   
   yenizaman=millis();
