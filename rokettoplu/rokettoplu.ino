@@ -58,6 +58,6 @@ void loop() {
   //make_package("yuk",a, 25, gps.location.lat(), gps.location.lng());
   double ok = gps.location.lat();
   Serial.println(gps.location.lat(),6);
-  post_package();
+  //post_package();
   delay(500);
 }
