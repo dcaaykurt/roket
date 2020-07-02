@@ -1,12 +1,15 @@
 // BMP180
-#include "uart_sender.h"
-#include <SFE_BMP180.h> 
+
+#include "SFE_BMP180.h" 
 #include <Wire.h> 
+#include "uart_sender.h"
+#include "oneDimensionalKalman.h"
+
 SFE_BMP180 pressure;
 double baseline,a,P;
 
 //GPS
-#include <TinyGPS++.h>
+#include "TinyGPS++.h"
 TinyGPSPlus gps;
 // denemeler
 
@@ -20,6 +23,7 @@ char status;
 double T,P,p0,a;
 
 status = pressure.startTemperature();
+
 if (status != 0){
 	delay(status); 
 	status = pressure.getTemperature(T); 
@@ -37,7 +41,6 @@ if (status != 0){ //sıfıra eşit değilse
 }
 
 void setup() {
-  
   pressure.begin();
   //yeniSeriPort.begin(9600); megaan uno ya geçersen gps buna bagla
   Serial3.begin(9600);

@@ -16,7 +16,7 @@ void set_package(void){
 //	@arg gpsLat: gps enlem
 //	@arg gpsLong: gps boylam
 //	@return NONE
-void make_package(String device, int altitude, int speed, float gpsLat, float gpsLong){
+void make_package(String device, int altitude, int speed, double gpsLat, double gpsLong){
 	PACKAGE = (device == "roket") ? "1" : "0";
 	PACKAGE += "/";
 	PACKAGE += String(altitude);
@@ -26,7 +26,6 @@ void make_package(String device, int altitude, int speed, float gpsLat, float gp
 	PACKAGE += String(gpsLat, FLOAT_PRECISION);
 	PACKAGE += "/";
 	PACKAGE += String(gpsLong, FLOAT_PRECISION);
-
 }
 
 //	@arg void
@@ -37,16 +36,3 @@ void post_package(void){
 	//set_package();
 }
 
-void setup() {
-	uart_init(115200);
-	set_package();
-}
-
-void loop() {
-	/*make_package("roket", 250, 25, 25.565484, 22.484512);
-	post_package();
-	delay(20);*/
-	make_package("yuk", 251, 23, 25.325654, 22.411523);
-	post_package();
-	delay(50);
-}
